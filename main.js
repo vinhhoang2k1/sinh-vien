@@ -1,15 +1,14 @@
-var idSVList = document.querySelectorAll('tr td#msv');
-idSVList.forEach((e) => {
+// var idSVList = document.querySelectorAll('tr td#msv');
+// idSVList.forEach((e) => {
+// // var tt1 = do
 
+// })
+// var html = idSVList.forEach((idSV, index) => {
+//     idSV.innerText = `2020 ${index + 1}`;
 
-})
-var html = idSVList.forEach((idSV) => {
-    let i = 0;
-    idSV.innerText = `2020 ${i++}`;
-    console.log(i)
-    for (let i = 0; i < idSVList.length; i++) {
+      
+// })
 
-    }
-    // return ` <td id="msv">2020 ${i++}</td> 
-    //     `
-})
+// function xetStatus() {
+    
+// }

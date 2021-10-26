@@ -12,6 +12,11 @@
             height: 100%;
         }
 
+        #myInput {
+            width: 5rem;
+            height: 1rem;
+        }
+
         table {
             margin: auto;
             background: #727272;
@@ -28,10 +33,24 @@
         th:first-child {
             width: 50%;
         }
+
+        tr:nth-child(even) {
+            height: 10vh;
+            background-color: rgb(229, 250, 215);
+        }
+        title {
+            display: flex;
+            width: 100%;
+            /* margin: auto; */
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
+    <input id="myInput" type="text" placeholder="Search..">
+
+    <title>thông tin sinh viên </title>
     <table>
         <tr>
             <th> họ và tên </th>
@@ -76,20 +95,27 @@
 
 
     </table>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="./main.js">
-        // $(document).ready(function () {
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
 
-        //     // console.log($('td#msv')); 
-        //     for (let id = 0; id < $('td#msv').length; id++) {
-        //         $("td#msv").text(`2020 ${id}`)
-        //     }
+        $(document).ready(function () {
+            // $('#myInput').on('keyup', function () {
+            //     var value = $(this).val().toLowerCase();
+            //     //   console.log(value);
+            //     $('table tr').filter(function() {
+            //         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            //     })
+            // })
 
-        //     // console.log(id)
 
-
-        // });
-        
+            $('#myInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('table tr:not(:first-child)').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        })
 
     </script>
 </body>
